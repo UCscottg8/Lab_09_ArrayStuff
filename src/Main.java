@@ -15,10 +15,10 @@ public class Main {
             if (i != dataPoints.length - 1) {
                 System.out.print(dataPoints[i] + " | ");
             } else {
-                System.out.print(dataPoints[i]); // avoid trailing "|" at the end
+                System.out.print(dataPoints[i]);
             }
         }
-        System.out.println(); // add a new line for readability
+        System.out.println();
 
         // Calculate sum and average
         double sum = 0.0;
