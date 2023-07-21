@@ -1,17 +1,34 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] dataPoints = new int[100];
+        Random rand = new Random();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Initialize array with random values
+        for (int i = 0; i < dataPoints.length; i++) {
+            dataPoints[i] = rand.nextInt(100) + 1;
         }
+
+        // Output statement - Print array values
+        for (int i = 0; i < dataPoints.length; i++) {
+            if (i != dataPoints.length - 1) {
+                System.out.print(dataPoints[i] + " | ");
+            } else {
+                System.out.print(dataPoints[i]); // avoid trailing "|" at the end
+            }
+        }
+        System.out.println(); // add a new line for readability
+
+        // Calculate sum and average
+        double sum = 0.0;
+        for (int i = 0; i < dataPoints.length; i++) {
+            sum += dataPoints[i];
+        }
+        double average = sum / dataPoints.length;
+
+        // Output statement - Print sum and average
+        System.out.printf("The sum of the values in the dataPoints array is: %.2f\n", sum);
+        System.out.printf("The average of the values in the dataPoints array is: %.2f\n", average);
     }
 }
