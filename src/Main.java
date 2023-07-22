@@ -52,15 +52,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int userValue = SafeInput.getRangedInt(scanner, "Enter a number between 1 and 100", 1, 100);
 
-        // Count how many times the user’s value is found within the array
-        int count = 0;
+        // Find the first occurrence of the user’s value in the array
+        boolean found = false;
         for (int i = 0; i < dataPoints.length; i++) {
             if (dataPoints[i] == userValue) {
-                count++;
+                System.out.println("The value " + userValue + " was found at array index " + i);
+                found = true;
+                break;
             }
         }
 
-        // Print the count
-        System.out.println("Your number " + userValue + " appears " + count + " times in the array.");
+        if (!found) {
+            System.out.println("The value " + userValue + " was not found in the array.");
+        }
     }
 }
