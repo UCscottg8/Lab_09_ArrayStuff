@@ -48,6 +48,20 @@ public class Main {
         System.out.printf("The sum of the values in the dataPoints array is: %.2f\n", sum);
         System.out.printf("The average of the values in the dataPoints array is: %.2f\n", average);
 
+        // Find the minimum and maximum value in the array
+        int minValue = dataPoints[0];
+        int maxValue = dataPoints[0];
+        for (int i = 1; i < dataPoints.length; i++) {
+            if (dataPoints[i] < minValue) {
+                minValue = dataPoints[i];
+            }
+            if (dataPoints[i] > maxValue) {
+                maxValue = dataPoints[i];
+            }
+        }
+        System.out.println("The minimum value in the array is: " + minValue);
+        System.out.println("The maximum value in the array is: " + maxValue);
+
         // Prompt and input an int value between 1 and 100 from the user
         Scanner scanner = new Scanner(System.in);
         int userValue = SafeInput.getRangedInt(scanner, "Enter a number between 1 and 100", 1, 100);
